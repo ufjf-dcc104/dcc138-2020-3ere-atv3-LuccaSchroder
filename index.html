@@ -21,7 +21,8 @@
             ctx.fillRect(0, 0, canvas.width, canvas.height);
         }
 
-        const wolves = document.querySelector("img");
+        const wolves = new Image();
+        wolves.src = "assets/lobo.png"
 
         wolves.addEventListener("load", carregamentoFinalizado);
 
