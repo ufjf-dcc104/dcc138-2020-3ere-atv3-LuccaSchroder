@@ -8,7 +8,6 @@
 <body>
     <h1>Exemplo 02</h1>
     <canvas></canvas>
-    <img src="assets/boneco01.png"/>
     <script>
         const canvas = document.querySelector("canvas");
         const ctx = canvas.getContext("2d");
@@ -19,8 +18,18 @@
 
         function desenhaFundo() {
             ctx.fillStyle = "green";
-            ctx.fillRect(0,0, canvas.width, canvas.height);
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
         }
+
+        const wolves = document.querySelector("img");
+
+        wolves.addEventListener("load", carregamentoFinalizado);
+
+        function carregamentoFinalizado() {
+            ctx.drawImage(wolves, 0, 0);
+        }
+
+
         let l = 2;
         let c = 1;
 
@@ -77,15 +86,7 @@
             requestAnimationFrame(passo);
             t0 = t;
         }
-
-        const boneco = document.querySelector("img");
-
-        boneco.addEventListener("load", carregamentoFinalizado);
         
-        function carregamentoFinalizado() {
-            ctx.drawImage(boneco, 100, 150);
-        }
-
 
 
 
