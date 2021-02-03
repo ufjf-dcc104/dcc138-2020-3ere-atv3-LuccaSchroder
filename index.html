@@ -22,12 +22,12 @@
         }
 
         const wolves = new Image();
-        wolves.src = "assets/lobo.png"
+        wolves.src = "assets/wolves.png"
 
         wolves.addEventListener("load", carregamentoFinalizado);
 
         function carregamentoFinalizado() {
-            ctx.drawImage(wolves, 0, 0);
+            
         }
 
 
@@ -37,6 +37,29 @@
         let pose = 0;
         let quadro = 0;
         const POSES = [
+            {qmax: 7, pv: 9}, 
+            {qmax: 7, pv: 9}, 
+            {qmax: 7, pv: 9}, 
+            {qmax: 7, pv: 9}, 
+            {qmax: 8, pv: 9}, 
+            {qmax: 8, pv: 9}, 
+            {qmax: 8, pv: 9}, 
+            {qmax: 8, pv: 9}, 
+            {qmax: 9, pv: 9}, 
+            {qmax: 9, pv: 9}, 
+            {qmax: 9, pv: 9}, 
+            {qmax: 9, pv: 9}, 
+            {qmax: 6, pv: 9}, 
+            {qmax: 6, pv: 9}, 
+            {qmax: 6, pv: 9}, 
+            {qmax: 6, pv: 9},
+            {qmax: 13, pv: 27}, 
+            {qmax: 13, pv: 27}, 
+            {qmax: 13, pv: 27}, 
+            {qmax: 13, pv: 27}, 
+            {qmax: 6, pv:  9}
+        ];
+        const PosesWolf = [
             {qmax: 7, pv: 9}, 
             {qmax: 7, pv: 9}, 
             {qmax: 7, pv: 9}, 
@@ -81,6 +104,13 @@
             Math.floor(quadro) * 64, pose * 64, 64, 64,
             // dx, dy, dw, dh
             0, 0, 64, 64
+            );
+            
+            ctx.drawImage(wolves, 
+            // sx, sy, sw, sh
+            Math.floor(quadro) * 64, pose * 64, 64, 64,
+            // dx, dy, dw, dh
+            72, 0, 64, 64
             );
             
             
