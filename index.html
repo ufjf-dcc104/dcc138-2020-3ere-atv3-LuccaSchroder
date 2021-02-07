@@ -21,10 +21,10 @@
             ctx.fillRect(0, 0, canvas.width, canvas.height);
         }
 
-        const wolves = new Image();
-        wolves.src = "assets/wolves.png"
+        const tubba = new Image();
+        tubba.src = "assets/charmander.png"
 
-        wolves.addEventListener("load", carregamentoFinalizado);
+        tubba.addEventListener("load", carregamentoFinalizado);
 
         function carregamentoFinalizado() {
             
@@ -36,6 +36,7 @@
 
         let pose = 0;
         let quadro = 0;
+        let quadroTubba = 0;
         const POSES = [
             {qmax: 7, pv: 9}, 
             {qmax: 7, pv: 9}, 
@@ -59,28 +60,8 @@
             {qmax: 13, pv: 27}, 
             {qmax: 6, pv:  9}
         ];
-        const PosesWolf = [
-            {qmax: 7, pv: 9}, 
-            {qmax: 7, pv: 9}, 
-            {qmax: 7, pv: 9}, 
-            {qmax: 7, pv: 9}, 
-            {qmax: 8, pv: 9}, 
-            {qmax: 8, pv: 9}, 
-            {qmax: 8, pv: 9}, 
-            {qmax: 8, pv: 9}, 
-            {qmax: 9, pv: 9}, 
-            {qmax: 9, pv: 9}, 
-            {qmax: 9, pv: 9}, 
-            {qmax: 9, pv: 9}, 
-            {qmax: 6, pv: 9}, 
-            {qmax: 6, pv: 9}, 
-            {qmax: 6, pv: 9}, 
-            {qmax: 6, pv: 9},
-            {qmax: 13, pv: 27}, 
-            {qmax: 13, pv: 27}, 
-            {qmax: 13, pv: 27}, 
-            {qmax: 13, pv: 27}, 
-            {qmax: 6, pv:  9}
+        const PosesTubba = [
+            {qmax: 4, pv: 5}
         ];
 
         function terminouDeCarregar() {
@@ -98,6 +79,7 @@
 
             quadro = (quadro >= POSES[pose].qmax - 1) ? 0 : quadro + POSES[pose].pv * dt;
             
+            quadroTubba = (quadroTubba >= PosesTubba[pose].qmax - 1) ? 0 : quadroTubba + PosesTubba[pose].pv * dt;
 
             ctx.drawImage(skelly, 
             // sx, sy, sw, sh
@@ -106,11 +88,11 @@
             0, 0, 64, 64
             );
             
-            ctx.drawImage(wolves, 
+            ctx.drawImage(tubba, 
             // sx, sy, sw, sh
-            Math.floor(quadro) * 64, pose * 64, 64, 64,
+            Math.floor(quadroTubba) * 64, pose * 64, 64, 64,
             // dx, dy, dw, dh
-            72, 0, 64, 64
+            60, 0, 64, 64
             );
             
             
