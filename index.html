@@ -21,10 +21,10 @@
             ctx.fillRect(0, 0, canvas.width, canvas.height);
         }
 
-        const tubba = new Image();
-        tubba.src = "assets/charmander.png"
+        const charmander = new Image();
+        charmander.src = "assets/charmander.png"
 
-        tubba.addEventListener("load", carregamentoFinalizado);
+        charmander.addEventListener("load", carregamentoFinalizado);
 
         function carregamentoFinalizado() {
             
@@ -36,7 +36,7 @@
 
         let pose = 0;
         let quadro = 0;
-        let quadroTubba = 0;
+        let quadroCharm = 0;
         const POSES = [
             {qmax: 7, pv: 9}, 
             {qmax: 7, pv: 9}, 
@@ -60,8 +60,8 @@
             {qmax: 13, pv: 27}, 
             {qmax: 6, pv:  9}
         ];
-        const PosesTubba = [
-            {qmax: 4, pv: 5}
+        const PosesCharm = [
+            {qmax: 5, pv: 4}
         ];
 
         function terminouDeCarregar() {
@@ -79,7 +79,7 @@
 
             quadro = (quadro >= POSES[pose].qmax - 1) ? 0 : quadro + POSES[pose].pv * dt;
             
-            quadroTubba = (quadroTubba >= PosesTubba[pose].qmax - 1) ? 0 : quadroTubba + PosesTubba[pose].pv * dt;
+            quadroCharm = (quadroCharm >= PosesCharm[pose].qmax - 1) ? 0 : quadroCharm + PosesCharm[pose].pv * dt;
 
             ctx.drawImage(skelly, 
             // sx, sy, sw, sh
@@ -88,9 +88,9 @@
             0, 0, 64, 64
             );
             
-            ctx.drawImage(tubba, 
+            ctx.drawImage(charmander, 
             // sx, sy, sw, sh
-            Math.floor(quadroTubba) * 64, pose * 64, 64, 64,
+            Math.floor(quadroCharm) * 64, pose * 64, 64, 64,
             // dx, dy, dw, dh
             60, 0, 64, 64
             );
