@@ -22,12 +22,12 @@
         }
 
         const charmander = new Image();
-        charmander.src = "assets/charmander.png"
+        charmander.src = "assets/charmander.png";
 
         charmander.addEventListener("load", carregamentoFinalizado);
 
         function carregamentoFinalizado() {
-            
+            requestAnimationFrame(passo);  
         }
 
 
@@ -61,7 +61,12 @@
             {qmax: 6, pv:  9}
         ];
         const PosesCharm = [
-            {qmax: 5, pv: 4}
+            {qmax: 9, pv: 4},
+            {qmax: 9, pv: 4},
+            {qmax: 9, pv: 4},
+            {qmax: 9, pv: 4},
+            {qmax: 9, pv: 4},
+            {qmax: 9, pv: 4}
         ];
 
         function terminouDeCarregar() {
@@ -71,7 +76,6 @@
         let t0;
         let dt;
 
-        requestAnimationFrame(passo);
         function passo(t) {
             t0 = t0 ?? t;
             dt = (t - t0)/1000;
@@ -90,7 +94,7 @@
             
             ctx.drawImage(charmander, 
             // sx, sy, sw, sh
-            Math.floor(quadroCharm) * 64, pose * 64, 64, 64,
+            Math.floor(quadroCharm) * 63.3, pose * 60, 63.3, 60,
             // dx, dy, dw, dh
             64, 0, 64, 64
             );
