@@ -12,7 +12,7 @@
         const canvas = document.querySelector("canvas");
         const ctx = canvas.getContext("2d");
         const skelly = new Image();
-        skelly.src = "./assets/skelly.png";
+        // skelly.src = "./assets/skelly.png";
 
         skelly.addEventListener("load", terminouDeCarregar);
 
@@ -96,7 +96,7 @@
             // sx, sy, sw, sh
             Math.floor(quadroCharm) * 63.3, pose * 60, 63.3, 60,
             // dx, dy, dw, dh
-            64, 0, 64, 64
+            10, 5, 64, 64
             );
                        
             requestAnimationFrame(passo);
